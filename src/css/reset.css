@@ -8,6 +8,9 @@ h6,
 p {
   margin: 0;
 }
+body {
+  box-sizing: border-box;
+}
 
 p:last-child {
   margin-bottom: 0;
@@ -26,6 +29,7 @@ a {
 
 button {
   cursor: pointer;
+  display: block;
 }
 
 img {
