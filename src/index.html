@@ -4,22 +4,34 @@
     <meta charset="UTF-8" />
     <link type="image/svg+xml" href="/favicon.svg" rel="icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
     <link href="./css/styles.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      rel="stylesheet"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Vanilla App Template</title>
   </head>
   <body>
     <section>
-      <div class="search-box">
+      <form class="search-box">
         <input
           id="search-image"
           name="image"
           type="text"
           placeholder="Search images..."
         />
-        <button class="search-btn" type="button">Search</button>
+        <button class="search-btn" type="submit">Search</button>
+      </form>
+      <div class="load-box">
+        <span class="loader"></span>
       </div>
+
       <ul class="image-list"></ul>
     </section>
+
     <script src="./main.js" type="module"></script>
   </body>
 </html>

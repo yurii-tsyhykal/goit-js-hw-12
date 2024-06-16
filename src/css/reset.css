@@ -34,6 +34,16 @@ button {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
+}
+
+span {
+  display: block;
+}
+
+section {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding-top: 36px;
 }
