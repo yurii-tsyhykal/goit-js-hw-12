@@ -4,8 +4,8 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-import { fetchImages } from './public/js/pixabay-api';
-import { imagesTemplate } from './public/js/render-functions';
+import { fetchImages } from './js/pixabay-api';
+import { imagesTemplate } from './js/render-functions';
 
 let gallery = new SimpleLightbox('.list-item a', {
   captionsData: 'alt',
