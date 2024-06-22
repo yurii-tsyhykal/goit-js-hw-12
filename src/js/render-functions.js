@@ -1,3 +1,14 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
+export const refs = {
+  formEl: document.querySelector('.search-box'),
+  inputEl: document.querySelector('#search-image'),
+  searchBtn: document.querySelector('.search-btn'),
+  listEl: document.querySelector('.image-list'),
+  loader: document.querySelector('.load-box'),
+};
+
 function imageTemplate({
   webformatURL,
   largeImageURL,
@@ -33,6 +44,28 @@ function imageTemplate({
     </div>
   </li>`;
 }
+
 export function imagesTemplate(imagesArr) {
   return imagesArr.map(imageTemplate).join('');
+}
+
+export function showError() {
+  iziToast.error({
+    theme: 'dark',
+    message:
+      'Sorry, there are no images matching your search query. Please try again!',
+    messageSize: 16,
+    messageColor: '#fff',
+    backgroundColor: '#ef4040',
+    position: 'topRight',
+    progressBarColor: '#b51b1b',
+    maxWidth: 432,
+  });
+}
+
+export function showLoader() {
+  refs.loader.classList.remove('load-box');
+}
+export function hideLoader() {
+  refs.loader.classList.add('load-box');
 }

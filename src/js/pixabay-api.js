@@ -1,14 +1,16 @@
-export function fetchImages(userInput) {
-  const BASE_URL = 'https://pixabay.com';
-  const END_POINT = '/api';
-  const params = new URLSearchParams({
-    key: '44394535-420bbb6d9539431cf03571547',
+import axios from 'axios';
+axios.defaults.baseURL = 'https://pixabay.com';
+
+export async function fetchImages(userInput, page) {
+  const params = {
     q: userInput,
+    page: page,
+    per_page: 15,
     image_type: 'photo',
     orientation: 'horizontal',
     safesearch: 'true',
-  });
-
-  const url = `${BASE_URL}${END_POINT}/?${params.toString()}`;
-  return fetch(url);
+    key: '44394535-420bbb6d9539431cf03571547',
+  };
+  const response = await axios.get('/api/', { params });
+  return response.data.hits;
 }
