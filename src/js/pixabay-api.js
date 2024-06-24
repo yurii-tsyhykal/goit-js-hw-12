@@ -1,10 +1,10 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://pixabay.com';
 
-export async function fetchImages(userInput, page) {
+export async function fetchImages(userInput, currentPage) {
   const params = {
     q: userInput,
-    page: page,
+    page: currentPage,
     per_page: 15,
     image_type: 'photo',
     orientation: 'horizontal',
@@ -12,5 +12,6 @@ export async function fetchImages(userInput, page) {
     key: '44394535-420bbb6d9539431cf03571547',
   };
   const response = await axios.get('/api/', { params });
-  return response.data.hits;
+  console.log(response);
+  return response.data;
 }

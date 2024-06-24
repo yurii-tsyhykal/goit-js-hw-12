@@ -7,7 +7,10 @@ export const refs = {
   searchBtn: document.querySelector('.search-btn'),
   listEl: document.querySelector('.image-list'),
   loader: document.querySelector('.load-box'),
+  loadMoreBtn: document.querySelector('.load-btn'),
 };
+
+export let page = 1;
 
 function imageTemplate({
   webformatURL,
@@ -68,4 +71,20 @@ export function showLoader() {
 }
 export function hideLoader() {
   refs.loader.classList.add('load-box');
+}
+
+export function showLoadMoreBtn() {
+  refs.loadMoreBtn.classList.remove('hidden');
+}
+export function hideLoadMoreBtn() {
+  refs.loadMoreBtn.classList.add('hidden');
+}
+
+export function ScrollByClick() {
+  const liEl = refs.listEl.children[0];
+  const height = liEl.getBoundingClientRect().height * 2;
+  window.scrollBy({
+    top: height,
+    behavior: 'smooth',
+  });
 }
